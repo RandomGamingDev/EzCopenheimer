@@ -7,6 +7,7 @@ defaultTimeout = 0.1
 ipRanges = [
                 #Enter the IP ranges here like this: [[127, 0, 0, 1], [127, 0, 0, 1]],
            ]
+outputFileName = "output.txt"
 
 def GetAddr(ip):
     return f"{ip[0]}.{ip[1]}.{ip[2]}.{ip[3]}:{defaultPort}"
@@ -35,8 +36,10 @@ class SearchThread(threading.Thread):
             try:
                 await asyncio.wait_for(task[1], timeout=100)
                 task[1].result()
-                print(GetAddr(task[0]))
-            except Exception as e:
+                outputFile = open(outputFileName, 'w')
+                outputFile.write(GetAddr(task[0]) + '\n')
+                outputFile.close()
+            except:
                 pass
         print("Thread finished!")
 
