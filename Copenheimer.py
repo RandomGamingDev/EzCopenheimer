@@ -2,8 +2,10 @@ from mcstatus import JavaServer
 import threading
 import asyncio
 
+
 defaultPort = 25565
-defaultTimeout = 0.1
+defaultTimeout = 1
+waitForTimeout = 100
 ipRanges = [
                 #Enter the IP ranges here like this: [[127, 0, 0, 1], [127, 0, 0, 1]],
            ]
@@ -32,14 +34,16 @@ class SearchThread(threading.Thread):
                     self.ipRange[0][i - 1] += 1
                 else:
                     break
+
         for task in tasks:
             try:
-                await asyncio.wait_for(task[1], timeout=100)
+                await asyncio.wait_for(task[1], timeout=waitForTimeout)
                 task[1].result()
-                outputFile = open(outputFileName, 'w')
+                print(GetAddr(task[0]))
+                outputFile = open(outputFileName, 'a')
                 outputFile.write(GetAddr(task[0]) + '\n')
                 outputFile.close()
-            except:
+            except Exception as e:
                 pass
         print("Thread finished!")
 
