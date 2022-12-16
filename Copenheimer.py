@@ -2,13 +2,17 @@ from mcstatus import JavaServer
 import threading
 import asyncio
 
-
 defaultPort = 25565
 defaultTimeout = 1
 waitForTimeout = 100
-ipRanges = [
-                #Enter the IP ranges here like this: [[127, 0, 0, 1], [127, 0, 0, 1]],
-           ]
+ipIters = [
+               [
+                    #Enter the IP ranges here like this: [[127, 0, 0, 1], [127, 0, 0, 1]],
+		    #A thread will scan each
+               ],
+               [ # Since computer network buffers are limited, there are different ipIters which are looped over synchronously in order, thus this is the same as the previous one, it just runs afterwards
+               ]
+          ]
 outputFileName = "output.txt"
 
 def GetAddr(ip):
@@ -39,22 +43,23 @@ class SearchThread(threading.Thread):
             try:
                 await asyncio.wait_for(task[1], timeout=waitForTimeout)
                 task[1].result()
-                print(GetAddr(task[0]))
                 outputFile = open(outputFileName, 'a')
                 outputFile.write(GetAddr(task[0]) + '\n')
                 outputFile.close()
-            except Exception as e:
+            except:
                 pass
         print("Thread finished!")
 
 def main():
     print("Program started!")
-    searchThreads = []
-    for ipRange in ipRanges:
-        searchThreads.append(SearchThread(ipRange))
-        searchThreads[len(searchThreads) - 1].start()
-    while True:
-        input(ipRanges)
+    for i in range(len(ipIters)):
+        print(f"Iteration #{i} started!")
+        searchThreads = []
+        for ipRange in ipIters[i]:
+            searchThreads.append(SearchThread(ipRange))
+            searchThreads[len(searchThreads) - 1].start()
+        for thread in searchThreads:
+            thread.join()
 
 if __name__ == "__main__":
     main()
