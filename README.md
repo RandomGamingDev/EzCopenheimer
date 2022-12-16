@@ -6,4 +6,4 @@ One thread will be spawned for each range and each thread will spawn an async pr
 
 The default port and default timeout can also be changed inside of the Copenheimer.py file.
 
-(Don't scan too many ip ranges or ip ranges that r too large or the program will take up all of your networking buffers and it'll miss a ton of stuff and u won't be able to use the internet while the program's running)
+(Don't scan too many ip ranges or ip ranges that r too large in one iteration or the program will take up all of your networking buffers and it'll miss a ton of stuff and u won't be able to use the internet while the program's running)
