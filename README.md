@@ -1,5 +1,5 @@
 # Copenheimer
-A basic version of the Copenheimer bot created by the 5th Column from 2B2T
+A basic and easy to use version of the Copenheimer bot created by the 5th Column from 2B2T that you can easily and simply execute using python
 
 Simply enter the IP ranges you'd like to search for Minecraft servers on in the ipRanges array.
 One thread will be spawned for each range and each thread will spawn an async process for each ip address scanned through, which well then be collected at the end
