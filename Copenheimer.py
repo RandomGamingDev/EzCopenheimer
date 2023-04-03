@@ -8,7 +8,7 @@ waitForTimeout = 100
 ipIters = [
                [
                     #Enter the IP ranges here like this: [[127, 0, 0, 1], [127, 0, 0, 1]],
-		    #A thread will scan each
+		            #A thread will scan each
                ],
                [ # Since computer network buffers are limited, there are different ipIters which are looped over synchronously in order, thus this is the same as the previous one, it just runs afterwards
                ]
