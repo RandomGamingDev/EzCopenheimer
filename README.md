@@ -1,5 +1,5 @@
-# Copenheimer
-A basic and easy to use version of the Copenheimer bot created by the 5th Column from 2B2T that you can easily and simply execute using python
+# EzCopenheimer
+A basic and easier to use version of the Copenheimer bot created by the 5th Column from 2B2T that you can easily and simply execute using python. Especially since you don't have to deal with anything like build systems, compilation, and the exact same thing on repeat for dependencies, unless you're using a build system which is another can of worms and can rather just run this python file.
 
 Simply install the libraries in requirements.txt (btw I'm not sure what python versions are supported, but it should work with all versions following 3.7 at the least) and enter the IP ranges you'd like to search for Minecraft servers on in the ipRanges array.
 One thread will be spawned for each range and each thread will spawn an async process for each ip address scanned through, which well then be collected at the end
