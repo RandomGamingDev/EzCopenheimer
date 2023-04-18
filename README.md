@@ -8,4 +8,18 @@ One thread will be spawned for each range and each thread will spawn an async pr
 
 The default port and default timeout can also be changed inside of the Copenheimer.py file.
 
+Remember to use multiple arrays inside of the main ipIters list as so not to use more network buffers than what you have.
+Also, enter multiple ipRanges into each `ipIter` aka each smaller list inside of `ipIters` as 1 thread will be allocated to each `ipRange`.
+In this way you can easily choosing how many resources are allocated to the bot, from how many network buffers to how many threads.
+```py
+ipIters = [
+               [
+                    #Enter the IP ranges here like this: [[127, 0, 0, 1], [127, 0, 0, 1]],
+		                #A thread will scan each
+               ],
+               [ # Since computer network buffers are limited, there are different ipIters which are looped over synchronously in order, thus this is the same as the previous one, it just runs afterwards
+               ]
+          ]
+```
+
 (Don't scan too many ip ranges or ip ranges that r too large in one iteration or the program will take up all of your networking buffers and it'll miss a ton of stuff and u won't be able to use the internet while the program's running)
