@@ -1,6 +1,8 @@
 # EzCopenheimer
 A basic and easier to use version of the Copenheimer bot created by the 5th Column from 2B2T that you can easily and simply execute using python. Especially since you don't have to deal with anything like build systems, compilation, and the exact same thing on repeat for dependencies, unless you're using a build system which is another can of worms and can rather just run this python file.
 
+I've created a video on it which you can check out here: https://youtu.be/oOV52vOx6W0
+
 This version of Copenheimer also doesn't require massscan which is a prerequisite for most of the other Copenheimer clones!
 
 Simply install the libraries in requirements.txt (btw I'm not sure what python versions are supported, but it should work with all versions following 3.7 at the least) and enter the IP ranges you'd like to search for Minecraft servers on in the ipRanges array.
