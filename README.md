@@ -3,7 +3,7 @@ A basic and easier to use version of the Copenheimer bot created by the 5th Colu
 
 I've created a video on it which you can check out here: https://youtu.be/oOV52vOx6W0
 
-This version of Copenheimer also doesn't require massscan which is a prerequisite for most of the other Copenheimer clones!
+This version of Copenheimer also doesn't require massscan, zmap, or nmap which are prerequisites for many of the other Copenheimer clones!
 
 Simply install the libraries in requirements.txt (btw I'm not sure what python versions are supported, but it should work with all versions following 3.7 at the least) and enter the IP ranges you'd like to search for Minecraft servers on in the ipRanges array.
 One thread will be spawned for each range and each thread will spawn an async process for each ip address scanned through, which well then be collected at the end
