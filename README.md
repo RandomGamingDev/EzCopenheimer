@@ -1,5 +1,5 @@
 # EzCopenheimer
-A basic and easier to use version of the Copenheimer bot created by the 5th Column from 2B2T that you can easily and simply execute using python. Especially since you don't have to deal with anything like build systems, compilation, and the exact same thing on repeat for dependencies.
+A basic and easier to use version of the Copenheimer bot created by the 5th Column from 2B2T that you can easily and simply execute using python made for educational purposes. Especially since you don't have to deal with anything like build systems, compilation, and the exact same thing on repeat for dependencies.
 
 I've created a video on it which you can check out here: https://youtu.be/oOV52vOx6W0
 
