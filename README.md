@@ -20,7 +20,6 @@ This version of Copenheimer also doesn't require massscan, zmap, or nmap which a
 
 
 # Configuring
-
 Enter the IP ranges you'd like to search for Minecraft servers on in the ipRanges array.
 One thread will be spawned for each range and each thread will spawn an async process for each ip address scanned through, which well then be collected at the end
 
@@ -43,9 +42,7 @@ ipIters = [
 The default port and default timeout can also be changed inside of the Copenheimer.py file.
 
 # Usage
-
 Run `copenheimer.py. Double-clicking the file should work, but if not, use `python /path/to/copenheimer.py`. As in the previous step, if you used `python3` in the configuration, replace `python` with `python3`.
 
 # License
-
 This project is licenced under the MIT license.
