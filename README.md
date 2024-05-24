@@ -3,22 +3,26 @@ A basic and easier to use version of the Copenheimer bot created by the 5th Colu
 
 
 
-
-# Usage
 I've created a video on it which you can check out here: https://youtu.be/oOV52vOx6W0
 
 This version of Copenheimer also doesn't require massscan, zmap, or nmap which are prerequisites for many of the other Copenheimer clones!
 
 # Installation
 1. Install [Python](https://python.org/). Make sure you install Python 3 and **not** Python 2. Make sure you check `add Python to PATH`.
-2. Verify the installation with `python --version`. If this doesent work, try `python3 --version`
-3. Install the libraries in requirements.txt: `python - pip install -r /path/to/requirments.txt`. Replace `/path/to/requirments.txt` with the actual path to `requirments.txt`. If you used `python3` in step 2, replace `python` with `python3`.
-4. Run `copenheimer.py. Double-clicking the file should work, but if not, use `python /path/to/copenheimer.py`. As in the previous step, if you used `python3` in step 2, replace `python` with `python3`.
- 
-(btw I'm not sure what python versions are supported, but it should work with all versions following 3.7 at the least) and enter the IP ranges you'd like to search for Minecraft servers on in the ipRanges array.
-One thread will be spawned for each range and each thread will spawn an async process for each ip address scanned through, which well then be collected at the end
 
-The default port and default timeout can also be changed inside of the Copenheimer.py file.
+2. Verify the installation with `python --version`. If this doesent work, try `python3 --version`
+
+3. Clone the repository. If you have `git` installed, use `git clone https://github.com/RandomGamingDev/EzCopenheimer.git`. Otherwise, download the ZIP and unzip it.
+
+4. Install the libraries in requirements.txt: `python - pip install -r /path/to/requirments.txt`. Replace `/path/to/requirments.txt` with the actual path to `requirments.txt`. If you used `python3` in step 2, replace `python` with `python3`.
+ 
+(btw I'm not sure what python versions are supported, but it should work with all versions following 3.7 at the least)
+
+
+# Configuring
+
+Enter the IP ranges you'd like to search for Minecraft servers on in the ipRanges array.
+One thread will be spawned for each range and each thread will spawn an async process for each ip address scanned through, which well then be collected at the end
 
 Remember to use multiple arrays inside of the main ipIters list as so not to use more network buffers than what you have.
 Also, enter multiple ipRanges into each `ipIter` aka each smaller list inside of `ipIters` as 1 thread will be allocated to each `ipRange`.
@@ -35,3 +39,13 @@ ipIters = [
 ```
 
 (Don't scan too many ip ranges or ip ranges that r too large in one iteration or the program will take up all of your networking buffers and it'll miss a ton of stuff and u won't be able to use the internet while the program's running)
+
+The default port and default timeout can also be changed inside of the Copenheimer.py file.
+
+# Usage
+
+Run `copenheimer.py. Double-clicking the file should work, but if not, use `python /path/to/copenheimer.py`. As in the previous step, if you used `python3` in the configuration, replace `python` with `python3`.
+
+# License
+
+This project is licenced under the MIT license.
