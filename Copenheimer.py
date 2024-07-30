@@ -1,4 +1,5 @@
 from mcstatus import JavaServer
+import logging
 import threading
 import asyncio
 
@@ -14,6 +15,12 @@ ipIters = [
                ]
           ]
 outputFileName = "output.txt"
+
+logger = logging.getLogger('log')
+logger.setLevel(logging.INFO)
+ch = logging.FileHandler(outputFileName)
+ch.setFormatter(logging.Formatter('%(message)s'))
+logger.addHandler(ch)
 
 def GetAddr(ip):
     return f"{ip[0]}.{ip[1]}.{ip[2]}.{ip[3]}:{defaultPort}"
@@ -43,9 +50,7 @@ class SearchThread(threading.Thread):
             try:
                 await asyncio.wait_for(task[1], timeout=waitForTimeout)
                 task[1].result()
-                outputFile = open(outputFileName, 'a')
-                outputFile.write(GetAddr(task[0]) + '\n')
-                outputFile.close()
+                logger.info(GetAddr(task[0]))
             except:
                 pass
         print("Thread finished!")
